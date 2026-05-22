@@ -29,7 +29,7 @@
           <div class="contact-row" aria-label="联系方式">
             <a href="tel:+8619827561248">198-2756-1248</a>
             <a href="mailto:1317379456@qq.com">1317379456@qq.com</a>
-            <span>微信 a1317379456</span>
+            <button class="copy-contact" type="button" data-copy="a1317379456" aria-label="复制微信号 a1317379456">微信 a1317379456</button>
             <a href="https://github.com/xiaokamikami">github.com/xiaokamikami</a>
           </div>
           <div class="actions">
@@ -227,5 +227,22 @@
       <span>Kami · Resume</span>
       <a href="#top">回到顶部</a>
     </footer>
+    <script>
+      document.querySelectorAll("[data-copy]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.getAttribute("data-copy");
+          const original = button.textContent;
+          try {
+            await navigator.clipboard.writeText(value);
+            button.textContent = "已复制微信号";
+            window.setTimeout(() => {
+              button.textContent = original;
+            }, 1600);
+          } catch {
+            button.textContent = value;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

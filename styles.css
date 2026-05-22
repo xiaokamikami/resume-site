@@ -149,14 +149,27 @@ h3 {
   border-bottom: 1px solid rgba(17, 124, 139, 0.35);
 }
 
-.contact-row span {
-  color: var(--ink-soft);
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.copy-contact {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.24);
+  background: transparent;
+  padding: 0;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font: inherit;
+}
+
+.copy-contact:hover,
+.copy-contact:focus-visible {
+  color: var(--accent);
+  outline: 0;
 }
 
 .button {
