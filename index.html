@@ -111,34 +111,6 @@
           <h2>项目成果</h2>
         </div>
         <div class="project-grid">
-          <article class="project-card highlight">
-            <div class="project-topline">
-              <h3>FPGA-DIFF：高性能 ISA 级验证平台</h3>
-              <span>2025.01 - 至今</span>
-            </div>
-            <ul>
-              <li>搭建 FPGA SOC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
-              <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽，验证速度达 10M Cycle/s。</li>
-              <li>相比 ZEBU 加速器提升 3 倍性能，成果投稿 2025 MICRO 顶会。</li>
-              <li>优化 NEMU REF 模式性能，通过 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等热路径优化，将速度由约 5M instr/s 提升至约 10M instr/s。</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <div class="project-topline">
-              <h3>Celviz AI-Driven EDA：个人自研 Agent 芯片设计与验证工作台</h3>
-              <span>2026.01 - 至今</span>
-            </div>
-            <ul>
-              <li>独立设计并实现 Celviz Agent 工作台，支持本地/远程 Web、Tauri 桌面端、无 GUI Shell 三类入口。</li>
-              <li>构建面向 EDA 工程的 Skill/知识库/RAG 体系，沉淀架构文档、项目索引、查询模板与工程经验。</li>
-              <li>具备复杂 Skill 体系开发能力，能够将工程规范、验证流程、远端执行、文档生成与代码审查沉淀为可复用的 AI 工作流。</li>
-              <li>设计多 Agent 并发协作机制，支持任务拆解、并行代码修改、冲突隔离、结果汇总和主线验证，提高复杂工程迭代效率。</li>
-              <li>设计 EDA 工具链后端资产边界，将 aieda、parser、ieda、iflow、idata、source navigation 等模块纳入 services/oscc。</li>
-              <li>建设 Agent 协作开发与验证闭环，覆盖需求拆解、代码生成、代码审查、测试运行、validation log、evidence bundle、risk extraction 与 readiness report。</li>
-            </ul>
-          </article>
-
           <article class="project-card">
             <div class="project-topline">
               <h3>RISC-V RandomX：随机访存哈希 workload 的多核 RISC-V SoC 探索</h3>
@@ -164,6 +136,34 @@
 
           <article class="project-card">
             <div class="project-topline">
+              <h3>Celviz AI-Driven EDA：个人自研 Agent 芯片设计与验证工作台</h3>
+              <span>2026.01 - 至今</span>
+            </div>
+            <ul>
+              <li>独立设计并实现 Celviz Agent 工作台，支持本地/远程 Web、Tauri 桌面端、无 GUI Shell 三类入口。</li>
+              <li>构建面向 EDA 工程的 Skill/知识库/RAG 体系，沉淀架构文档、项目索引、查询模板与工程经验。</li>
+              <li>具备复杂 Skill 体系开发能力，能够将工程规范、验证流程、远端执行、文档生成与代码审查沉淀为可复用的 AI 工作流。</li>
+              <li>设计多 Agent 并发协作机制，支持任务拆解、并行代码修改、冲突隔离、结果汇总和主线验证，提高复杂工程迭代效率。</li>
+              <li>设计 EDA 工具链后端资产边界，将 aieda、parser、ieda、iflow、idata、source navigation 等模块纳入 services/oscc。</li>
+              <li>建设 Agent 协作开发与验证闭环，覆盖需求拆解、代码生成、代码审查、测试运行、validation log、evidence bundle、risk extraction 与 readiness report。</li>
+            </ul>
+          </article>
+
+          <article class="project-card highlight">
+            <div class="project-topline">
+              <h3>FPGA-DIFF：高性能 ISA 级验证平台</h3>
+              <span>2025.01 - 至今</span>
+            </div>
+            <ul>
+              <li>搭建 FPGA SOC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
+              <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽，验证速度达 10M Cycle/s。</li>
+              <li>相比 ZEBU 加速器提升 3 倍性能，成果投稿 2025 MICRO 顶会。</li>
+              <li>优化 NEMU REF 模式性能，通过 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等热路径优化，将速度由约 5M instr/s 提升至约 10M instr/s。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
               <h3>EMU 验证工具链：硬件加速仿真平台</h3>
               <span>2024.06 - 2025.01</span>
             </div>
@@ -172,6 +172,19 @@
               <li>开发 ST 自动连线与 Difftest 配置生成工具，使用 SystemVerilog Interface + Python 降低手工接入成本。</li>
               <li>维护 Bin2ddr 与 Checkpoint 内存压缩流程，输出 MC DDR Load；优化 DRAMSim DDR 总线逻辑，降低无效访问与 MC 资源占用。</li>
               <li>适配 FPGA-Difftest 到合见 FPGA 集群，沉淀 SOC 工程 Tcl/Git 脚本化管理流程。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>集创赛紫光杯：基于 FPGA 的视频缩放拼接目标识别工程</h3>
+              <span>2023.03 - 2023.06</span>
+            </div>
+            <ul>
+              <li>基于紫光同创 PGL50H/MES50HP 平台完成多路视频采集、缩放、DDR3 缓存与 HDMI 回环显示，支持 OV5640/HDMI 输入链路。</li>
+              <li>设计 DDR3 读写控制、乒乓缓存、视频拼接地址偏移与多路写入仲裁，完成四分屏视频流实时拼接。</li>
+              <li>实现千兆以太网 UDP 图像传输、ARP/ICMP 基础网络链路和 PyQt5 上位机，接入 YOLOv5 目标检测与显示交互。</li>
+              <li>完成竞赛设计文档、性能测试与上板验证：30Hz 画面无明显卡顿，UDP 发送约 130-140Mbps，识别帧率约 4-5 FPS。</li>
             </ul>
           </article>
 
