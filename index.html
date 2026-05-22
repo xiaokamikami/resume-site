@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="冯柯翰的硬件验证、RISC-V、AI-Driven EDA 个人简历与项目成果。">
+    <title>冯柯翰 | Hardware Verification & AI-Driven EDA</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">冯柯翰</a>
+      <nav aria-label="主导航">
+        <a href="#experience">经历</a>
+        <a href="#projects">项目</a>
+        <a href="#skills">技能</a>
+        <a href="assets/feng-kehan-resume.docx">下载简历</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Hardware Verification · RISC-V · AI-Driven EDA</p>
+          <h1 id="intro-title">芯片验证基础设施与 AI 工程工具链开发</h1>
+          <p class="summary">
+            聚焦处理器 ISA 级验证、NEMU/QEMU 参考模型、EMU/FPGA/Palladium 硬件加速平台，以及个人自研 Celviz Agent 芯片设计与验证工作台；具备复杂 Skill 体系设计、多 Agent 并发开发与工程验证闭环建设能力。
+          </p>
+          <div class="contact-row" aria-label="联系方式">
+            <a href="tel:+8619827561248">198-2756-1248</a>
+            <a href="mailto:1317379456@qq.com">1317379456@qq.com</a>
+            <a href="https://github.com/xiaokamikami">github.com/xiaokamikami</a>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#projects">查看项目成果</a>
+            <a class="button secondary" href="assets/feng-kehan-resume.docx">下载 DOCX</a>
+          </div>
+        </div>
+        <aside class="profile-panel" aria-label="简历摘要">
+          <img src="assets/profile.jpeg" alt="冯柯翰证件照">
+          <div class="profile-meta">
+            <span>23 岁</span>
+            <span>吉利学院 · 电子信息工程</span>
+            <span>北京开源芯片研究院 · 芯片基础设施工程师</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metrics" aria-label="关键指标">
+        <div>
+          <strong>22GB/s</strong>
+          <span>FPGA PCIe 上位机传输带宽</span>
+        </div>
+        <div>
+          <strong>10M</strong>
+          <span>FPGA 验证速度 Cycle/s</span>
+        </div>
+        <div>
+          <strong>5M -> 10M</strong>
+          <span>NEMU REF 模式优化</span>
+        </div>
+        <div>
+          <strong>114K</strong>
+          <span>RV64 SoC baseline hash/s @1GHz</span>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>工作经历</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024.06 - 至今</div>
+            <div class="timeline-body">
+              <h3>北京开源芯片研究院 · 芯片基础设施工程师</h3>
+              <p class="role">敏捷验证工具 EMU/FPGA 方向</p>
+              <ul>
+                <li>负责处理器 ISA 级验证工具链建设，覆盖 Difftest、NEMU/QEMU、EMU/FPGA/Palladium、高速 PCIe 数据通路与自动化 CI。</li>
+                <li>负责 NEMU/QEMU 参考模型与 Difftest 验证链路优化，支撑 FPGA/EMU 验证平台性能与稳定性提升。</li>
+                <li>完善 Cadence Palladium 硬件加速平台能力，支持 Difftest、Checkpoint、SPEC06 一键测试等验证流程在 EMU 环境运行。</li>
+                <li>开发 ST 自动连线、Difftest 配置生成、Bin2ddr 与 Checkpoint 内存压缩等工具，降低验证平台接入和调试成本。</li>
+                <li>适配合见 FPGA 集群环境，完成 FPGA-Difftest 部署、SOC 工程脚本化管理与集群运行流程打通。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2023.10 - 2024.06</div>
+            <div class="timeline-body">
+              <h3>北京开源芯片研究院 · C++ 架构模拟器实习生-S1 工程师</h3>
+              <ul>
+                <li>参与 NEMU/QEMU/GEM5 模拟器维护、RISC-V Vector 指令调试、Palladium Difftest 与 SPEC06 一键测试能力建设。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>学术成果</h2>
+        </div>
+        <div class="paper-list">
+          <p><strong>DiffTest-H: Toward Semantic-Aware Communication in Hardware-Accelerated Processor Verification.</strong> IEEE/ACM International Symposium on Microarchitecture (MICRO), 2025. 三作</p>
+          <p><strong>处理器验证系统、方法、电子设备及可读存储介质.</strong> CN202610030426.4, 2026. 一作，实质审查中</p>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>项目成果</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card highlight">
+            <div class="project-topline">
+              <h3>FPGA-DIFF：高性能 ISA 级验证平台</h3>
+              <span>2025.01 - 至今</span>
+            </div>
+            <ul>
+              <li>搭建 FPGA SOC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
+              <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽，验证速度达 10M Cycle/s。</li>
+              <li>相比 ZEBU 加速器提升 3 倍性能，成果投稿 2025 MICRO 顶会。</li>
+              <li>优化 NEMU REF 模式性能，通过 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等热路径优化，将速度由约 5M instr/s 提升至约 10M instr/s。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>Celviz AI-Driven EDA：个人自研 Agent 芯片设计与验证工作台</h3>
+              <span>2026.01 - 至今</span>
+            </div>
+            <ul>
+              <li>独立设计并实现 Celviz Agent 工作台，支持本地/远程 Web、Tauri 桌面端、无 GUI Shell 三类入口。</li>
+              <li>构建面向 EDA 工程的 Skill/知识库/RAG 体系，沉淀架构文档、项目索引、查询模板与工程经验。</li>
+              <li>具备复杂 Skill 体系开发能力，能够将工程规范、验证流程、远端执行、文档生成与代码审查沉淀为可复用的 AI 工作流。</li>
+              <li>设计多 Agent 并发协作机制，支持任务拆解、并行代码修改、冲突隔离、结果汇总和主线验证，提高复杂工程迭代效率。</li>
+              <li>设计 EDA 工具链后端资产边界，将 aieda、parser、ieda、iflow、idata、source navigation 等模块纳入 services/oscc。</li>
+              <li>建设 Agent 协作开发与验证闭环，覆盖需求拆解、代码生成、代码审查、测试运行、validation log、evidence bundle、risk extraction 与 readiness report。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>RISC-V RandomX：随机访存哈希 workload 的多核 RISC-V SoC 探索</h3>
+              <span>2026.05 - 至今</span>
+            </div>
+            <ul>
+              <li>基于 kimi45 内核搭建面向随机访存与哈希计算的 RV64 SoC 验证平台，覆盖工作集建模、性能 profiling、DRAMSim3 内存时序与远端 Verilator 回归。</li>
+              <li>设计控制核 + 计算核 cluster 的多核拓扑，打通 AXI 控制窗口、共享 DRAM fabric、FlooNoC 数据面、任务分发与结果回收路径。</li>
+              <li>建立可复现实验口径：8 核 compute cluster、16 memory endpoints、真实 FlooNoC RTL baseline，SoC 级吞吐约 114K hash/s @1GHz，并定位主要瓶颈在 cluster 出站 NoC 注入路径。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>soomrv 45 内核：RV64 OoO Core Bring-up 与内存系统改造</h3>
+              <span>2026.05 - 至今</span>
+            </div>
+            <ul>
+              <li>基于 SoomRV 开源项目基线推进到 RV64 主数据通路，统一 RegT/VAddrT/PAddrT、CSR、BTB/PC、load/store、cache tag/refill 与 AXI 地址宽度。</li>
+              <li>补充 directed/cosim 验证 gate，覆盖 RV64 load/store、mul/div、CSR、Zdinx/FP VM、AES hotloop、prefetch hint、L3 refill 与多核 bus UT。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>EMU 验证工具链：硬件加速仿真平台</h3>
+              <span>2024.06 - 2025.01</span>
+            </div>
+            <ul>
+              <li>完善 Cadence Palladium 硬件加速环境，实现 Difftest 与 Checkpoint 在 EMU/Palladium 上运行。</li>
+              <li>开发 ST 自动连线与 Difftest 配置生成工具，使用 SystemVerilog Interface + Python 降低手工接入成本。</li>
+              <li>维护 Bin2ddr 与 Checkpoint 内存压缩流程，输出 MC DDR Load；优化 DRAMSim DDR 总线逻辑，降低无效访问与 MC 资源占用。</li>
+              <li>适配 FPGA-Difftest 到合见 FPGA 集群，沉淀 SOC 工程 Tcl/Git 脚本化管理流程。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>一生一芯：RISC-V64 单发射处理器设计与验证</h3>
+              <span>2022.07 - 2023.10</span>
+            </div>
+            <ul>
+              <li>完成南京大学 PA 实验与 NEMU 框架补充，基于 Verilator/NEMU 搭建处理器功能对比验证流程。</li>
+              <li>实现 5 级流水 RISC-V64 处理器，支持 RV64IM、AXI4 总线、8KB ICache + 8KB DCache，并可运行应用软件。</li>
+              <li>优化 LIBC 与图形绘制路径，将 RTL 仿真运行仙剑奇侠传的速度提升至 2 分钟内完成考核目标。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2>技术技能</h2>
+        </div>
+        <div class="skill-grid">
+          <div>
+            <h3>架构设计</h3>
+            <p>RISC-V 超标量处理器、分支预测算法、AXI 总线协议</p>
+          </div>
+          <div>
+            <h3>验证平台</h3>
+            <p>Difftest、Cadence Palladium、FPGA 原型验证、PCIe 高速通信</p>
+          </div>
+          <div>
+            <h3>模拟器</h3>
+            <p>NEMU、QEMU、Spike、GEM5 架构模拟器开发与优化</p>
+          </div>
+          <div>
+            <h3>编程语言</h3>
+            <p>SystemVerilog、Verilog、C/C++、Python、Shell</p>
+          </div>
+          <div>
+            <h3>AI 工程化</h3>
+            <p>Skill 体系设计、多 Agent 并发开发、任务编排、代码审查与验证闭环</p>
+          </div>
+          <div>
+            <h3>EDA 工具</h3>
+            <p>Xilinx、国产 FPGA 开发、DRAMSim 内存模拟、CI/CD</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>冯柯翰 · Resume</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+  </body>
+</html>
