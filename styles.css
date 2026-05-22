@@ -22,7 +22,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--wash);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(79, 70, 229, 0.09), transparent 30vw),
+    radial-gradient(circle at 88% 12%, rgba(15, 23, 42, 0.06), transparent 28vw),
+    linear-gradient(180deg, #ffffff 0%, var(--wash) 42%, #ffffff 100%);
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   line-height: 1.72;
@@ -43,7 +46,7 @@ a {
   gap: 24px;
   border-bottom: 1px solid var(--line);
   background: rgba(250, 250, 250, 0.82);
-  padding: 18px max(28px, calc((100vw - 1160px) / 2));
+  padding: 18px max(30px, calc((100vw - 1320px) / 2));
   backdrop-filter: blur(22px);
 }
 
@@ -66,14 +69,25 @@ footer a:hover {
 }
 
 main {
-  width: min(1160px, calc(100% - 48px));
+  width: min(1320px, calc(100% - 56px));
   margin: 0 auto;
 }
 
 .hero {
   display: block;
   min-height: min(760px, calc(100vh - 72px));
-  padding: 118px 0 72px;
+  padding: 124px 0 82px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 54px;
+  width: min(42vw, 520px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(17, 17, 17, 0.34));
 }
 
 .eyebrow {
@@ -134,6 +148,10 @@ h3 {
   border-bottom: 1px solid rgba(17, 124, 139, 0.35);
 }
 
+.contact-row span {
+  color: var(--ink-soft);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -149,6 +167,11 @@ h3 {
   border-radius: 999px;
   padding: 0 18px;
   font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 .button.primary {
@@ -173,6 +196,11 @@ h3 {
   border-right: 1px solid var(--line);
   background: transparent;
   padding: 28px 24px 30px 0;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.metrics div:hover {
+  transform: translateY(-3px);
 }
 
 .metrics div + div {
@@ -209,8 +237,8 @@ h3 {
 
 .section-heading {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 60px;
   align-items: start;
   margin-bottom: 42px;
 }
@@ -222,8 +250,8 @@ h3 {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 60px;
   border-top: 1px solid var(--line);
   padding: 30px 0;
 }
@@ -283,10 +311,17 @@ li::marker {
 
 .project-card {
   display: grid;
-  grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: minmax(330px, 0.5fr) minmax(0, 1fr);
+  gap: 64px;
   border-top: 1px solid var(--line);
   padding: 34px 0;
+  transition: background-color 180ms ease, padding-left 180ms ease, padding-right 180ms ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.58);
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .project-card.highlight {
@@ -327,7 +362,7 @@ li::marker {
 footer {
   display: flex;
   justify-content: space-between;
-  width: min(1160px, calc(100% - 48px));
+  width: min(1320px, calc(100% - 56px));
   margin: 0 auto;
   border-top: 1px solid var(--line);
   padding: 28px 0 40px;
@@ -374,7 +409,7 @@ footer {
 @media (max-width: 560px) {
   main,
   footer {
-    width: min(100% - 28px, 1160px);
+    width: min(100% - 28px, 1320px);
   }
 
   .site-header {
