@@ -209,6 +209,51 @@ h3 {
   font-size: 15px;
 }
 
+.github-strip {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 34px 0;
+  margin-bottom: 40px;
+}
+
+.github-strip h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.github-strip p:not(.eyebrow) {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.github-strip a:not(.contribution-chart) {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.24);
+}
+
+.contribution-chart {
+  display: block;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.58);
+  padding: 18px;
+}
+
+.contribution-chart img {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+  filter: grayscale(1) contrast(1.08);
+}
+
 .metrics div {
   border-right: 1px solid var(--line);
   background: transparent;
@@ -396,7 +441,8 @@ footer {
   .hero,
   .section-heading,
   .timeline-item,
-  .project-card {
+  .project-card,
+  .github-strip {
     grid-template-columns: 1fr;
   }
 
