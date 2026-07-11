@@ -24,7 +24,7 @@
           <p class="eyebrow">Hardware Verification · RISC-V · Architecture Simulator</p>
           <h1 id="intro-title">处理器验证平台与 RISC-V 架构模拟器开发</h1>
           <p class="summary">
-            主要做处理器 ISA 级验证、NEMU/gem5 参考模型、EMU/FPGA/Palladium 硬件加速仿真和 RISC-V SoC bring-up；习惯从模拟器、RTL、Difftest 到 CI/集群脚本把问题定位清楚并落到工程流程里。
+            主要做处理器 ISA 级验证、NEMU/gem5 参考模型、EMU/FPGA/Palladium 与 GPU 硬件加速仿真、RISC-V SoC bring-up；也在探索以监督式 Agent Flow 驱动芯片设计、验证与迭代闭环。
           </p>
           <div class="contact-row" aria-label="联系方式">
             <a href="tel:+8619827561248">198-2756-1248</a>
@@ -46,7 +46,7 @@
         </div>
         <div>
           <p class="eyebrow">Focus</p>
-          <p>Difftest / NEMU / gem5 / FPGA-DIFF / Palladium / RISC-V OoO / 工程工具链</p>
+          <p>Difftest / NEMU / gem5 / FPGA-DIFF / Palladium / CelG-VSIM / RISC-V OoO / Agent Flow</p>
         </div>
       </section>
 
@@ -76,7 +76,7 @@
               <ul>
                 <li>负责处理器 ISA 级验证工具链建设，覆盖 Difftest、NEMU/gem5/QEMU、EMU/FPGA/Palladium、高速 PCIe 数据通路与自动化 CI。</li>
                 <li>负责 NEMU/gem5 相关模拟器开发与调试，补充 RISC-V 指令、CSR、异常路径和 Difftest 状态对齐能力，支撑 workload 复现与 trace 定位。</li>
-                <li>优化 NEMU REF 模式热路径，通过 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等改动提升 FPGA/EMU 验证吞吐。</li>
+                <li>基于 AI DSE 持续搜索并迭代优化 NEMU REF 模式热路径，覆盖 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等，将验证吞吐提升至约 15M instr/s。</li>
                 <li>完善 Cadence Palladium 硬件加速平台能力，支持 Difftest、Checkpoint、SPEC06 一键测试等验证流程在 EMU 环境运行。</li>
                 <li>开发 ST 自动连线、Difftest 配置生成、Bin2ddr 与 Checkpoint 内存压缩等工具，降低验证平台接入和调试成本。</li>
                 <li>适配合见 FPGA 集群环境，完成 FPGA-Difftest 部署、SOC 工程脚本化管理与集群运行流程打通。</li>
@@ -115,38 +115,28 @@
         <div class="project-grid">
           <article class="project-card">
             <div class="project-topline">
-              <h3>kimi45 RISC-V RandomX：随机访存哈希 workload 的多核 SoC 探索</h3>
-              <span>2025.12 - 至今</span>
-            </div>
-            <ul>
-              <li>基于 kimi45 RV64 内核搭建面向随机访存与哈希计算的 SoC 验证平台，覆盖工作集建模、性能 profiling、DRAMSim3 内存时序与远端 Verilator 回归。</li>
-              <li>设计控制核 + 计算核 cluster 的多核拓扑，打通 AXI 控制窗口、共享 DRAM fabric、FlooNoC 数据面、任务分发与结果回收路径。</li>
-              <li>建立可复现实验口径：8 核 compute cluster、16 memory endpoints、真实 FlooNoC RTL baseline，完成 SoC 级吞吐评估与多核数据通路验证。</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <div class="project-topline">
-              <h3>kimi45 / soomrv 45 内核：RV64 OoO Core Bring-up 与内存系统改造</h3>
-              <span>2025.12 - 至今</span>
-            </div>
-            <ul>
-              <li>基于 SoomRV 开源项目基线推进到 RV64 主数据通路，统一 RegT/VAddrT/PAddrT、CSR、BTB/PC、load/store、cache tag/refill 与 AXI 地址宽度。</li>
-              <li>补充 directed/cosim 验证 gate，覆盖 RV64 load/store、mul/div、CSR、Zdinx/FP VM、AES hotloop、prefetch hint、L3 refill 与多核 bus UT。</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <div class="project-topline">
-              <h3>Celviz 工程工具链：芯片设计与验证辅助平台</h3>
+              <h3>CelViz：监督式 Agent Flow 驱动的芯片设计与验证平台</h3>
               <span>2026.01 - 至今</span>
             </div>
             <ul>
-              <li>个人自研工程工具，提供本地/远程 Web、Tauri 桌面端和无 GUI Shell 入口，用于管理代码工作区、运行记录和结果包。</li>
-              <li>整理 EDA 项目知识库和检索索引，沉淀架构文档、项目索引、查询模板与常见调试经验。</li>
-              <li>按服务边界接入 aieda、parser、ieda、iflow、idata、source navigation 等模块，方便代码检索、流程调用和结果归档。</li>
-              <li>沉淀常用开发流程，覆盖需求拆解、补丁生成、代码审查、测试运行、validation log、evidence bundle、risk extraction 与 readiness report。</li>
-              <li>面向架构探索和 RTL 验证，串起 SPEC 文档、模拟器反馈、Difftest/仿真任务编排，为后续自动 RTL 实现提供工程基础。</li>
+              <li>个人自研并监督多 Agent Flow 完成需求拆解、并行设计、实现、评审、验证与迭代；通过主管准入、模型评审、目标完成审计和 evidence bundle 约束结果可追溯、可复现。</li>
+              <li>以该监督式 Agent Flow 设计并迭代 kimi45 RV64 OoO 内核，完成 RV64 主数据通路与 CSR、BTB/PC、load/store、cache refill、AXI 地址宽度改造，并建立 directed/cosim 验证 gate。</li>
+              <li>以 kimi45 为基础设计 RandomX 多核芯片：构建控制核 + 8 核计算 cluster、16 个 memory endpoints、共享 DRAM/FlooNoC 数据面，打通任务分发、结果回收、DRAMSim3 建模和远端 Verilator 回归。</li>
+              <li>最新完善 AI 原生 UT Flow：支持外部项目适配、8 模块并发验证、复杂激励 recipe、可插拔模型评审与优先级回收，并增加 PPA 路由/时序/面积证据门控。</li>
+              <li>提供本地/远程 Web、Tauri 桌面端及无 GUI Shell/AI Hook 入口，统一管理代码工作区、运行记录、知识检索、validation log、风险提取与 readiness report。</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-topline">
+              <h3>CelG-VSIM：面向 EMU 的 GPU 加速 RTL 仿真器</h3>
+              <span>2026.06 - 至今</span>
+            </div>
+            <ul>
+              <li>面向大型 SoC/EMU 回归开发独立 GPU RTL 仿真器，自研网表编译、GEM 分区、CUDA 并行执行与 RAMGEM 内存建模，形成独立编译与运行时链路。</li>
+              <li>建立四态语义、状态提交、差分 replay、provenance、mismatch 计数与 kill switch 闭环；在真实 kimi45 RandomX RTL 上验证 GPU 计算与状态写回，并保持最终状态与 RTL 可见状态 hash 一致。</li>
+              <li>实现 netlist/GEM 分区、热点 helper/mtask 融合、紧凑状态传输、persistent cooperative kernel 与多 GPU 映射，持续压缩 kernel fanout 和跨卡同步开销。</li>
+              <li>RTX 4090 全量回归性能约 250K cycles/s；16,384-lane 大规模回归中实测约 245K cycles/s，并通过 SRAM/DFF 行为与最终状态一致性校验。</li>
             </ul>
           </article>
 
@@ -160,7 +150,6 @@
               <li>适配 FPGA-Difftest 到合见 FPGA 集群，完成部署、SOC 工程脚本化管理与集群运行流程打通。</li>
               <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽，验证速度达 10M Cycle/s。</li>
               <li>相比 ZEBU 加速器提升 3 倍性能，成果投稿 2025 MICRO 顶会。</li>
-              <li>优化 NEMU REF 模式性能，通过 tcache 结构优化、PMP/PMA 权限缓存与预解码、Host TLB 等热路径优化，将速度由约 5M instr/s 提升至约 10M instr/s；关闭 PMP check 场景下可达 15M instr/s。</li>
             </ul>
           </article>
 
@@ -227,7 +216,7 @@
           </div>
           <div>
             <h3>工程工具链</h3>
-            <p>项目知识库、RAG 检索、任务编排、代码审查与验证记录沉淀</p>
+            <p>监督式 Agent Flow、项目知识库、RAG 检索、任务编排、模型评审与验证证据闭环</p>
           </div>
           <div>
             <h3>EDA 工具</h3>
