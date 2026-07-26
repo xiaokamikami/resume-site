@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Kami 的处理器验证、RISC-V、架构模拟器与工程工具链个人简历。">
-    <title>Kami | Hardware Verification & RISC-V Simulation</title>
+    <meta name="description" content="Kami 的芯片验证 FDE、RISC-V 参考模型、EMU/FPGA 与 GPU RTL 加速仿真个人简历。">
+    <title>Kami | Chip Verification FDE · RISC-V · EMU/FPGA</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -21,10 +21,10 @@
     <main id="top">
       <section class="hero" aria-labelledby="intro-title">
         <div class="hero-copy">
-          <p class="eyebrow">Hardware Verification · RISC-V · Architecture Simulator</p>
-          <h1 id="intro-title">处理器验证平台与 RISC-V 架构模拟器开发</h1>
+          <p class="eyebrow">Chip Verification FDE · EMU/FPGA · RISC-V</p>
+          <h1 id="intro-title">芯片验证 FDE 与处理器加速仿真平台研发</h1>
           <p class="summary">
-            主要做处理器 ISA 级验证、NEMU/gem5 参考模型、EMU/FPGA/Palladium 与 GPU 硬件加速仿真、RISC-V SoC bring-up；也在探索以监督式 Agent Flow 驱动芯片设计、验证与迭代闭环。
+            聚焦处理器 ISA 级验证、NEMU/gem5 参考模型、EMU/FPGA/Palladium 与 GPU RTL 加速仿真；从模型、RTL、Difftest 到 PCIe 数据通路、CI 集群和监督式 Agent Flow，持续推进验证性能与工程闭环。
           </p>
           <div class="contact-row" aria-label="联系方式">
             <a href="tel:+8619827561248">198-2756-1248</a>
@@ -39,10 +39,33 @@
         </div>
       </section>
 
+      <section class="impact-strip" aria-label="关键工程指标">
+        <div class="impact-item">
+          <strong>15M</strong>
+          <span>instr/s</span>
+          <p>AI DSE 优化 NEMU REF</p>
+        </div>
+        <div class="impact-item">
+          <strong>15M</strong>
+          <span>Cycle/s</span>
+          <p>DSE 优化 FPGA gold module</p>
+        </div>
+        <div class="impact-item">
+          <strong>22</strong>
+          <span>GB/s</span>
+          <p>PCIe 高速验证数据通路</p>
+        </div>
+        <div class="impact-item">
+          <strong>250K</strong>
+          <span>cycles/s</span>
+          <p>RTX 4090 CelG-VSIM 回归</p>
+        </div>
+      </section>
+
       <section class="profile-strip" aria-label="个人简介">
         <div>
           <p class="eyebrow">Profile</p>
-          <p>芯片基础设施工程师，关注处理器验证平台、参考模型性能、硬件加速仿真与面向 EDA 的工程工具。</p>
+          <p>芯片验证 FDE / 芯片基础设施工程师，关注处理器验证平台、参考模型性能、硬件加速仿真与面向 EDA 的工程工具。</p>
         </div>
         <div>
           <p class="eyebrow">Focus</p>
@@ -75,7 +98,7 @@
             <div class="timeline-date">2024.06 - 至今</div>
             <div class="timeline-body">
               <h3>北京开源芯片研究院 · 芯片基础设施工程师</h3>
-              <p class="role">敏捷验证工具 EMU/FPGA 方向</p>
+              <p class="role">芯片验证 FDE · 敏捷验证工具研发 EMU/FPGA 方向</p>
               <ul>
                 <li>负责处理器 ISA 级验证工具链建设，覆盖 Difftest、NEMU/gem5/QEMU、EMU/FPGA/Palladium、高速 PCIe 数据通路与自动化 CI。</li>
                 <li>负责 NEMU/gem5 相关模拟器开发与调试，补充 RISC-V 指令、CSR、异常路径和 Difftest 状态对齐能力，支撑 workload 复现与 trace 定位。</li>
@@ -83,6 +106,7 @@
                 <li>完善 Cadence Palladium 硬件加速平台能力，支持 Difftest、Checkpoint、SPEC06 一键测试等验证流程在 EMU 环境运行。</li>
                 <li>开发 ST 自动连线、Difftest 配置生成、Bin2ddr 与 Checkpoint 内存压缩等工具，降低验证平台接入和调试成本。</li>
                 <li>适配合见 FPGA 集群环境，完成 FPGA-Difftest 部署、SOC 工程脚本化管理与集群运行流程打通。</li>
+                <li>辅助原型验证团队完成 SoC 在合见 FPGA 上的 debug 检查，打通 FPGA 与 CI 服务器联动，实现自动化原型验证回归。</li>
               </ul>
             </div>
           </article>
@@ -149,10 +173,10 @@
               <span>2025.01 - 至今</span>
             </div>
             <ul>
-              <li>搭建 FPGA SOC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
+              <li>搭建 FPGA SoC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
               <li>适配 FPGA-Difftest 到合见 FPGA 集群，完成部署、SOC 工程脚本化管理与集群运行流程打通。</li>
-              <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽，验证速度达 10M Cycle/s。</li>
-              <li>相比 ZEBU 加速器提升 3 倍性能，成果投稿 2025 MICRO 顶会。</li>
+              <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽；验证速度达到 10M Cycle/s，经 DSE 优化后的 gold module 提升至 15M Cycle/s。</li>
+              <li>相比 ZEBU 加速器提升 3 倍性能，相关成果发表于 2025 MICRO。</li>
             </ul>
           </article>
 
