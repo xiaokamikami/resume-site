@@ -69,7 +69,7 @@
         </div>
         <div>
           <p class="eyebrow">Focus</p>
-          <p>Difftest / NEMU / gem5 / FPGA-DIFF / Palladium / CelG-VSIM / RISC-V OoO / Agent Flow</p>
+          <p>端到端验证基础设施 / 参考模型性能优化 / FPGA &amp; EMU 自动化回归 / Agent Flow 芯片设计</p>
         </div>
       </section>
 
@@ -100,13 +100,10 @@
               <h3>北京开源芯片研究院 · 芯片基础设施工程师</h3>
               <p class="role">芯片验证 FDE · 敏捷验证工具研发 EMU/FPGA 方向</p>
               <ul>
-                <li>负责处理器 ISA 级验证工具链建设，覆盖 Difftest、NEMU/gem5/QEMU、EMU/FPGA/Palladium、高速 PCIe 数据通路与自动化 CI。</li>
-                <li>负责 NEMU/gem5 相关模拟器开发与调试，补充 RISC-V 指令、CSR、异常路径和 Difftest 状态对齐能力，支撑 workload 复现与 trace 定位。</li>
+                <li>负责处理器 ISA 级验证基础设施建设，打通参考模型、Difftest、EMU/FPGA 硬件加速平台、高速数据通路与自动化回归。</li>
                 <li>基于 AI DSE 持续搜索并迭代优化 NEMU REF 模式热路径，覆盖 tcache、PMP/PMA 权限缓存与预解码、Host TLB 等，将验证吞吐提升至约 15M instr/s。</li>
-                <li>完善 Cadence Palladium 硬件加速平台能力，支持 Difftest、Checkpoint、SPEC06 一键测试等验证流程在 EMU 环境运行。</li>
-                <li>开发 ST 自动连线、Difftest 配置生成、Bin2ddr 与 Checkpoint 内存压缩等工具，降低验证平台接入和调试成本。</li>
-                <li>适配合见 FPGA 集群环境，完成 FPGA-Difftest 部署、SOC 工程脚本化管理与集群运行流程打通。</li>
-                <li>辅助原型验证团队完成 SoC 在合见 FPGA 上的 debug 检查，打通 FPGA 与 CI 服务器联动，实现自动化原型验证回归。</li>
+                <li>建设 Cadence Palladium 验证工具链，落地 Difftest、Checkpoint 与 SPEC06 一键测试，并以自动连线、配置生成和内存镜像工具降低平台接入成本。</li>
+                <li>建设合见 FPGA 集群原型验证基础设施，支持 SoC debug、工程脚本化管理及 FPGA 与 CI 服务器联动回归。</li>
               </ul>
             </div>
           </article>
@@ -115,8 +112,8 @@
             <div class="timeline-body">
               <h3>北京开源芯片研究院 · C++ 架构模拟器实习生-S1 工程师</h3>
               <ul>
-                <li>参与 NEMU/QEMU/gem5 模拟器维护，补充 RISC-V 指令、CSR 与异常处理路径，配合 Difftest 修正参考模型和 RTL 状态差异。</li>
-                <li>调试 RISC-V Vector workload 与 SPEC06 用例，整理可复现实验脚本、trace 日志和最小化 case，支撑 Palladium Difftest 一键测试流程。</li>
+                <li>负责 gem5 自动化检查与回归，为 NEMU 补充 RISC-V Vector 扩展及 SPEC06 运行支持。</li>
+                <li>优化 DRAM C++ 模型与 RTL 的 DPI-C 交互路径，减少约 60% 无效请求；在硬件加速器上支持 Checkpoint 运行，提升性能评测效率。</li>
               </ul>
             </div>
           </article>
@@ -161,7 +158,7 @@
             </div>
             <ul>
               <li>面向大型 SoC/EMU 回归开发独立 GPU RTL 仿真器，自研网表编译、GEM 分区、CUDA 并行执行与 RAMGEM 内存建模，形成独立编译与运行时链路。</li>
-              <li>建立四态语义、状态提交、差分 replay、provenance、mismatch 计数与 kill switch 闭环；在真实 kimi45 RandomX RTL 上验证 GPU 计算与状态写回，并保持最终状态与 RTL 可见状态 hash 一致。</li>
+              <li>建立四态语义、状态提交、差分 replay、provenance、mismatch 计数与 kill switch 闭环；以真实复杂 RTL 工作负载验证 GPU 计算与状态写回，并保持最终状态与 RTL 可见状态 hash 一致。</li>
               <li>实现 netlist/GEM 分区、热点 helper/mtask 融合、紧凑状态传输、persistent cooperative kernel 与多 GPU 映射，持续压缩 kernel fanout 和跨卡同步开销。</li>
               <li>RTX 4090 全量回归性能约 250K cycles/s；16,384-lane 大规模回归中实测约 245K cycles/s，并通过 SRAM/DFF 行为与最终状态一致性校验。</li>
             </ul>
@@ -173,8 +170,7 @@
               <span>2025.01 - 至今</span>
             </div>
             <ul>
-              <li>搭建 FPGA SoC 验证环境，将 Difftest 集成至 FPGA 工程，实现验证流程自动化 CI。</li>
-              <li>适配 FPGA-Difftest 到合见 FPGA 集群，完成部署、SOC 工程脚本化管理与集群运行流程打通。</li>
+              <li>搭建 FPGA SoC 验证环境，将 Difftest 集成至合见 FPGA 集群，完成部署、SoC 工程脚本化管理与自动化 CI。</li>
               <li>设计 PCIe 高速上位机架构，实现 22GB/s 数据传输带宽；验证速度达到 10M Cycle/s，经 DSE 优化后的 gold module 提升至 15M Cycle/s。</li>
               <li>相比 ZEBU 加速器提升 3 倍性能，相关成果发表于 2025 MICRO。</li>
             </ul>
